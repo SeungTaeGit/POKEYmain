@@ -29,12 +29,6 @@ figure {
   vertical-align: baseline;
 
 }
-ol, ul {
-    list-style: none;
-}
-li {
-    float: left;
-}
 
 
 .header_main {
@@ -62,7 +56,65 @@ li {
 }
 
 .text_right {
-  text-align: right;
+    text-align: right;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.loginbtn {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: .4em;
+    color: #282828;
+    z-index: 0;
+    padding: 5px 24px 5px 0;
+}
+.loginbtn:before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 125%;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    z-index: -1;
+    background-color: #d4c6e6;
+    transition: all .3s ease;
+}
+.loginbtn:hover {
+    animation-name: hoverani;
+}
+@keyframes hoverani {
+
+    0% { height: 125%; }
+
+    15% { height: 95%;}
+
+    30% { height: 70%; }
+
+    45% { height: 50%; }
+
+    60% { height: 35%; }
+
+    75% { height: 25%; }
+
+    90% { height: 20%; }
+
+    100% { height: 17%; }
+
 }
 
 
@@ -95,7 +147,7 @@ li {
   height: 280px;
 }
 .container_room {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .container_logo {
   padding-left: 3%;
@@ -119,6 +171,7 @@ li {
   width: 77%;
   background: #E2DED1;
   height: 350px;
+    border-radius: 30px 10px;
 }
 .container_bottom_top {
   width: 70%;
@@ -145,6 +198,7 @@ li {
     padding-left: 6%;
     padding-top: 3%;
     line-height: 1.5em;
+    list-style: none;
 }
 .icons {
     display: block;
@@ -156,6 +210,7 @@ li {
     -ms-flex: 0 0 24%;
     flex: 0 0 24%;
     text-align: center;
+    float: left;
 }
 .icon_desc {
   font-size: 14px;
@@ -163,3 +218,213 @@ li {
   letter-spacing: 0.1em;
 }
 
+
+
+input {
+    display: none;
+}
+
+#menuArea {
+    padding-left: 15px;
+    padding-top: 3px;
+}
+.open {
+    background-color: #3c3c3c;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    top: 8px;
+}
+
+.open:before {
+    content: "";
+    background-color: #3c3c3c;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: -8px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+
+.open:after {
+    content: "";
+    background-color: #3c3c3c;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: 4px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+
+.menuOpen {
+    width: 24px;
+    height: 20px;
+    display: block;
+    cursor: pointer;
+    float: right;
+}
+
+.menuOpen:hover .open:before {
+    top: -9px;
+}
+
+.menuOpen:hover .open:after {
+    top: 5px;
+}
+
+.menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(241, 239, 233, 0.8);
+}
+
+.menu label {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.menu .menuContent {
+    position: relative;
+    top: 50%;
+    font-size: 54px;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: -170px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.menu ul li a {
+    display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: Trebuchet MS;
+    text-transform: uppercase;
+    padding: 10px 0;
+    color: BLACK;
+}
+
+.menu ul li a:hover {
+    color: #f1efe9;
+}
+
+.menu ul li:hover {
+    background: white;
+}
+
+.menuEffects {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menuEffects ul {
+    transform: translateY(0%);
+    transition: all 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects ul {
+    opacity: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open {
+    background-color: transparent;
+}
+
+#menuToggle:checked ~ .menuOpen .open:before {
+    content: "";
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open:after {
+    content: "";
+    background-color: white;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#menuToggle:not(:checked) ~ .menuEffects ul {
+    transform: translateY(-30%);
+}
+
+
+.roombtn {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-weight: 1000;
+    font-size: 12px;
+    letter-spacing: .4em;
+    color: #282828;
+    z-index: 0;
+    padding: 5px 24px 5px 0;
+}
+.roombtn:before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 125%;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    z-index: -1;
+    background-color: #d4c6e6;
+    transition: all .3s ease;
+}
+.roombtn:hover {
+    animation-name: hoverani;
+}
+@keyframes hoverani {
+
+    0% { height: 125%; }
+
+    15% { height: 95%;}
+
+    30% { height: 70%; }
+
+    45% { height: 50%; }
+
+    60% { height: 35%; }
+
+    75% { height: 25%; }
+
+    90% { height: 20%; }
+
+    100% { height: 17%; }
+
+}
