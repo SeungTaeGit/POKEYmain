@@ -7,6 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
     <title>POKEY</title>
 </head>
@@ -25,8 +29,17 @@
             </div>
 
             <div class="header_flex text_right">
-                <a href="/" class="loginbtn">
-                    CREATE ROOM
+                <a href="#section1" class="loginbtn">
+                    HOME
+                </a>
+                <a href="#section2" class="loginbtn">
+                    ABOUT
+                </a>
+                <a href="#section3" class="loginbtn">
+                    CONTACT
+                </a>
+                <a href="#section3" class="loginbtn">
+                    SIGN UP
                 </a>
 
                 <div id="menuArea">
@@ -40,7 +53,7 @@
                         <label for="menuToggle"></label>
                         <div class="menuContent">
                             <ul>
-                                <li><a href="#">HOME</a></li>
+                                <li><a href="#section1">HOME</a></li>
                                 <li><a href="#">FORUM</a></li>
                                 <li><a href="#">SUPPORT</a></li>
                                 <li><a href="#">POKEY BOT</a></li>
@@ -52,7 +65,7 @@
         </nav>
     </header>
 
-    <section class="home_main">
+    <section class="home_main" id="section1">
         <div class="main">
             <div class="container">
                 <h1 class="container_h1">Pokey sevice since 2023</h1>
@@ -132,11 +145,6 @@
                         </div>
                     </div>
                 </div>
-<!--                <div class="container_roomcreate">-->
-<!--                    <a href="/" class="roombtn">-->
-<!--                        ROOM CREATE-->
-<!--                    </a>-->
-<!--                </div>-->
             </div>
         </div>
     </section>
@@ -146,7 +154,7 @@
 
 <!--            배경 애니메이션    >-->
 
-    <div class="area">
+    <section class="area">
         <ul class="squares">
             <li></li>
             <li></li>
@@ -163,10 +171,89 @@
             <li></li>
             <li></li>
         </ul>
-    </div>
+    </section>
 
+<!--    주요 기능 설명-->
+    <section class="main-function" id="section2">
 
+        <div class="main-container">
 
+            <div class="main-function-pic">
+                <img src="/img/내 프로젝트.png" class="main-function-picture">
+            </div>
+
+            <h1 class="contact-h1">About us</h1>
+            <span class="contact-span"></span><br>
+
+            <div class="gallery-wrap">
+                <div class="item item-1"></div>
+                <div class="item item-2"></div>
+                <div class="item item-3"></div>
+                <div class="item item-4"></div>
+                <div class="item item-5"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="contact" id="section3">
+
+        <div class="contact-container">
+
+            <div class="contact-text">
+                <h1 class="contact-h1">Contact us</h1>
+                <span class="contact-span"></span>
+                <h2 class="contact-h2">Please, use the form below or send an email to dltmdxo1589@daum.net</h2><br>
+                <div class="contact-logo">
+                    <img class="container_logo_img" src="/img/real_logo2.png">
+                </div>
+
+                <div class="group">
+                    <input type="text" required class="contactinput">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="contactlabel">Name</label>
+                </div>
+
+                <div class="group">
+                    <input type="text" required class="contactinput">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="contactlabel">E-mail</label>
+                </div><br>
+
+                <div class="group">
+                    <input type="text" required class="contactinput">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="contactlabel">Message</label>
+                </div>
+
+                <div class="wrap">
+                    <button class="smbtn">Submit</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="footer">
+
+        <div class="footer-div">
+
+            <h3 class="footer-h3">POKEY SERVICE © 2023.03 - 2023.06</h3>
+
+            <div id="wrapper">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+        </div>
+
+    </section>
 
 </body>
 </html>

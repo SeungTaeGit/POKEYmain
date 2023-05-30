@@ -1,0 +1,233 @@
+html {
+  font-family: "Open Sans",sans-serif;
+}
+/* 회원 정보 폼 */
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position: relative;
+  margin-bottom: 25px;
+}
+.logininput 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+.logininput:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+.loginlabel 				 {
+  color: #999;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 15px;
+  top: 15px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+.logininput:focus ~ .loginlabel, .logininput:valid ~ .loginlabel 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:93%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+.logininput:focus ~ .bar:before, .logininput:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.logininput:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+.login-form {
+    padding-left: 5%;
+}
+
+
+
+
+.login {
+    width: 700px;
+    height: 450px;
+    margin: auto;
+    border-radius: 50px;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    border-radius: 50px;
+    box-shadow: -11px 11px 22px #bebebe;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+.form p {
+  padding-left: 50px;
+}
+
+.form input {
+    outline: 0;
+    width: 93%;
+    border: 0;
+    border-radius: 5px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    opacity: 0.7;
+    background: #FFF9E8;
+}
+
+.form input:focus {
+    background: #e0e0e0;
+}
+
+
+.wrapbtns {
+  display: flex;
+  padding-top: 120px;
+}
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  margin: 0 auto;
+}
+
+.wrap .smbtn {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-top: 25px;
+}
+
+.wrap .smbtn:hover {
+    background-color: #CEC7E0;
+    box-shadow: 0px 15px 20px rgba(230, 230, 250, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.info-h1 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  letter-spacing: 1.5px;
+}
+.info-h2 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  letter-spacing: 1.5px;
+}
+.wrap .smbtn2 {
+    position: absolute;
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  margin-top: -50px;
+  margin-left: 370px;
+}
+
+.wrap .smbtn2:hover {
+    background-color: #CEC7E0;
+    box-shadow: 0px 15px 20px rgba(230, 230, 250, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.userinfo span {
+  width: 94%;
+  height: 2px;
+  background: darkgray;
+  display: inline-block;
+}
